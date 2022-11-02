@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const msj = ["benim", "adım", "murat", "baran"];
+        let sonuc ="";
+        for (let x of msj) {
+            sonuc += x + " ";
+        }
+        console.log(sonuc);
+
+        // 1- Yukarıda döngü ile yazdığımız işlemi spread operatoru ile 1 satırda yazdık.
+        console.log(...msj);
+
+        // 2- Dizi birleştirme spread opretorü ile
+        const dizi1 = ["bir","iki"];
+        const dizi2 = ["üç","dört"];
+        const dizi3 = [...dizi1, ...dizi2];
+        console.log(dizi3);
+
+        // 3- value kopyalama yapma spread operatoru ile  (bu sayede bir dizide yapılan değişiklik diğer diziyi etkilemez)
+        const sayilar1 = [1,2,3];
+        // const sayilar2 = sayilar1;   //referance kopyalama
+        // sayilar1[1] = 23;   //burada sayilar2 dizisinde de değişim oldu referans kopyalamadan dolayı
+        const sayilar2 = [...sayilar1];
+        sayilar2[1] = 21;
+        console.log(sayilar1, sayilar2);
+
+        // 4- iki diziyi yazdırma
+        const user = {
+            username : "murat baran",
+            email : "info@gmail.com"
+        }
+
+        const addres = {
+            username : "abc",
+            city : "kocaeli"
+        }
+
+        console.log({...user, ...addres});
+
+        // 5- rest parameters
+
+        function toplam(...args){
+            let sonuc = 0 ;
+            for(let sayi of args){
+                sonuc += sayi;
+            }
+            console.log(sonuc);
+        }
+
+        toplam(15,21);
+        toplam(15,21,78,12,2);
+
+        function bilgileriGoster(isim, soyad, ...adres){
+            console.log(isim);
+            console.log(soyad);
+            console.log(adres);
+        }
+
+        bilgileriGoster("murat","baran","istanbul","esenler");
+
+        
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+
+        //Aşağıdaki kod bloğunda senkron çalışma modelinde olduğu için yukarıdan aşağıya doğru kod bloğu işletilecek ve 1 saniye setTimeout olduğundan ekrana yazdırma işleminde undifined yazacak
+
+        // console.log("start");
+        
+        // const login = (username, password) => {
+        //     setTimeout(() => {
+        //         return {username : username}
+        //     },1000);
+        // }
+
+        // const username = login("muratBaran","12345");
+        // console.log(username);
+
+        // console.log("end");
+
+        //
+
+
+        console.log("start");
+        
+        const login = (username, password, callback) => {
+            setTimeout(() => {
+                callback ({username : username, email:"info@mrtbrn.com"})
+            },1000);
+        }
+
+        const getPostsByUsername = (username, callback) => {
+            setTimeout(() => {
+                callback(["post1", "post2", "post3"]);
+            },2000)
+        }
+
+        const getPostDetails = (post, callback) => {
+            setTimeout(() => {
+                callback("post details");
+            },1000)
+        }
+
+        login("muratBaran","12345", user => {
+            console.log(user.username);
+            console.log(user.email);
+
+            getPostsByUsername(user.username, (posts)=>{
+                console.log(posts);
+
+                getPostDetails(posts[0], (details) => {
+                    console.log(details);
+                });
+
+            });
+
+        });
+
+        console.log("end");
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const sayilar = [1,5,7,3,2,67];
+        const urunler = [
+            {urunAdi : "iPhone 11", urunFiyati : 13000},
+            {urunAdi : "iPhone 12", urunFiyati : 15000},
+            {urunAdi : "iPhone 13", urunFiyati : 18000},
+            {urunAdi : "iPhone 13 Pro", urunFiyati : 22000}
+        ];
+        // const tekSayilar =[];
+        // for (let sayi of sayilar){
+        //     if(sayi % 2 == 1){
+        //         tekSayilar.push(sayi);
+        //     }
+        // }
+        
+        // const tekSayiKontrol = (sayi) => sayi % 2 == 1;
+        // const tekSayilar = sayilar.filter(tekSayiKontrol);
+        // console.log(tekSayilar);
+        //burada array içindeki sayıları filter metodu ile arrow ile olusturdugumuz 
+        // fonksiyonla tek olanları filtreleyip yeni bir diziye atıyoruz.
+        
+        // const tekSayilar = sayilar.map((sayi) => sayi % 2 == 1);
+        // console.log(tekSayilar);
+
+        // const sonuc = urunler.map(urun =>urun.urunAdi );
+        // const sonuc = urunler.filter(urun =>urun.urunFiyati >= 15000).map(urun => urun.urunAdi);
+        // console.log(sonuc);
+        //Urunleri filtreliyoruz ve daha sonra ise bunları map ile urun adlarini getiriyoruz
+
+        // const sonuc = urunler.find(urun => urun.urunFiyati > 12000);
+        const sonuc = urunler.findIndex(urun => urun.urunFiyati > 16000);
+        console.log(sonuc);
+
+
+    </script>
+</body>
+</html>

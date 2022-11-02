@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Constructor ile yeni nesne olustuyoruz map türünde ve key value seklinde
+        //atamalar yapıyoruz ve daha sonra key kullanarak map üzerindeki metodlar ve özellikler ile aşağıdaki özellikleri kullanabiliyoruz.
+
+       const ogrenciler  = new Map();
+        
+       ogrenciler.set(1, "ali yılmaz");
+       ogrenciler.set("54546545", "efe can");
+       ogrenciler.set(true, "ali can");
+       
+       console.log(ogrenciler.get(1));
+       console.log(ogrenciler.get(true));
+    
+       let sonuc;
+
+       sonuc = ogrenciler.size;             //eleman sayısını döndürür
+
+
+       sonuc = ogrenciler.has(1);                   //has() value degeri girilen eleman varmı kontrolu
+       sonuc = ogrenciler.has("2");                   
+       console.log(sonuc);
+
+        // ogrenciler.delete("54546545");        //value bilgisi girilen elemanı silme
+        // ogrenciler.clear();                      //tüm kayıtları temizleme
+        // console.log(ogrenciler);
+        
+        
+        
+        //Aşağıda tüm key ve valueları for yardımıyla ekrana yazdırdık entires ile tüm bilgiler gelir
+
+        for (let x of ogrenciler.keys()){
+            console.log(x);
+        }
+
+        for (let x of ogrenciler.values()){
+            console.log(x);
+        }
+
+        for (let x of ogrenciler.entries()){
+            console.log(x);
+        }
+       
+    
+    
+    </script>
+</body>
+</html>

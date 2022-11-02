@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        class Kisi{
+            constructor(ad, dogumYili){
+                console.log("Kisi Constructor Çalıştı")
+                this.ad = ad;
+                this.dogumYili = dogumYili;
+            }
+
+            yasHesapla(){
+                let tarih = new Date().getFullYear();
+                return tarih - this.dogumYili;
+            }
+
+            kendiniTanıt(){
+                return `Benim adım ${this.ad}`;
+            }
+        }
+
+        class Ogrenci extends Kisi{
+            constructor(ad, dogumYili, okulNumarasi){
+                super(ad, dogumYili);        //Kalıtımı aldığım temel sınıfının constructor calısması için kullanıyoruz
+                console.log("Ogrenci Constructor Çalıştı")
+                this.okulNumarasi = okulNumarasi;
+            }
+
+            dersCalis(){
+                return `${this.ad} ders calısıyor.`;
+            }
+
+            kendiniTanıt(){
+                return `Benim adım ${this.ad}  Numaram :  ${this.okulNumarasi}`;
+            }
+
+        }
+
+        let kisi = new Kisi("ali", 2004);
+        let ogrenci = new Ogrenci("Murat", 2001, 1203);
+
+        console.log(kisi.yasHesapla());
+        console.log(ogrenci.yasHesapla());
+        console.log(ogrenci.dersCalis());
+        console.log(kisi.kendiniTanıt());
+        console.log(ogrenci .kendiniTanıt());
+        
+
+    </script>
+</body>
+</html>
